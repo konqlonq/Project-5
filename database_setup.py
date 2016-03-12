@@ -53,7 +53,7 @@ class Item(Base):
         }
 
 # Naming the DB file
-engine = create_engine('postgresql://catalog:password@localhost/brands')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 
 
 Base.metadata.create_all(engine)

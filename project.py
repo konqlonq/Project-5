@@ -33,7 +33,7 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Catalog App"
 
 # Connect to Database and create database session
-engine = create_engine('postgresql://catalog:password@localhost/brands')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
