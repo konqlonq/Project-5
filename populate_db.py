@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Brand, Item, User
 
-engine = create_engine('postgresql:///brands.db')
+engine = create_engine('postgresql://brands.db')
 DBSession = sessionmaker(bind = engine)
 session = DBSession()
 
