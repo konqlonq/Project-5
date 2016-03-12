@@ -1,0 +1,48 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyles.css') }}">
+</head>
+	<div class='header'><h3>{{user.name}}</h3></div>
+
+	<!-- Flash Messages for the Web-app-->
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for message in messages %}
+	<div class='flash'>{{message}}</div>
+  	{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+<body>
+	<ul>
+		<!-- Navigation Bar for the Web-app-->
+		<li><a class='brands' href='{{url_for('index')}}'>Home</a></li>
+				<li><a class='brands' href='{{url_for('gdisconnect')}}'>Login/Logout</a></li>
+	</ul>
+	<!-- Loops through DB and prints data-->
+	{% for i in items %}
+  	<div class="Tile">
+
+  		<img src="{{i.image}}">
+  		<h1>{{i.name}}</h1>
+  		<h2>${{i.price}}</h2>
+  		<h2>{{i.user_id}}</h2>
+  		<h4>{{i.description}}</h4>
+
+  		<!-- Links to edit and delete items-->
+  		<div class='edit_delete'>
+		<a href= '{{url_for('editItem',item_id = i.id)}}'>Edit</a>
+		<a href = '{{url_for('deleteItem',item_id = i.id)}}'>Delete</a>
+		</div>
+
+		</div>
+
+  	</div>
+	{% endfor %}
+
+<div class="Tile">
+<a href = '{{url_for('newItem')}}'>Create New Item</a>
+
+</div>
+</body>
+</html>

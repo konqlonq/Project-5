@@ -1,0 +1,43 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyles.css') }}">
+</head>
+	<body>
+
+		<div class='header'><h3>New Item</h3></div>
+			
+			<ul>
+				<!-- Navigation Bar for the Web-app-->
+				<li><a class='brands' href='{{url_for('index')}}'>Home</a></li>
+				<li><a class='brands' href='{{url_for('brandsCatalog', brand_id = 1)}}'>Apple</a></li>
+				<li><a class='brands' href='{{url_for('brandsCatalog', brand_id = 2)}}'>Sumsung</a></li>
+				<li><a class='brands' href='{{url_for('brandsCatalog', brand_id = 3)}}'>LG</a></li>
+				<li><a class='brands' href='{{url_for('brandsCatalog', brand_id = 4)}}'>Sony</a></li>
+				<li><a class='brands' href='{{url_for('brandsCatalog', brand_id = 5)}}'>Huawei</a></li>
+				<li><a class='brands' href='{{url_for('gdisconnect')}}'>Login/Logout</a></li>
+			</ul>
+			<!-- Form to create new items-->
+		<div class="form">
+			<form action="{{url_for('newItem')}}" method = 'POST'>
+				<p>Name:</p>
+				<input type='text' size='30' name='name'>
+				<p>Price:</p>
+				<input type='text' size='30' name='price'>
+				<p>Description:</p>
+				<input type='text' size='30' name='description'>
+				<p>Image URL:</p>
+				<input type='text' size='50' name='image'>
+				<p>Brand:</p>
+				<select name='brand'>
+					<!-- Drop-down menu-->
+					<option value="1">Apple</option>
+					<option value="2">Samsung</option>
+					<option value="3">LG</option>
+					<option value="4">Sony</option>
+					<option value="5">Huawei</option>
+				<input type='submit' value='Create'>
+			</form>
+		</div>
+</html>
+
+
