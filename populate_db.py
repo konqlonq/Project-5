@@ -107,7 +107,7 @@ session.commit()
 
 # Creates Brand Sony
 brand4 = Brand(name= "Sony")
-session.add(brand3)
+session.add(brand4)
 session.commit()
 
 # Creates Sony Item 1

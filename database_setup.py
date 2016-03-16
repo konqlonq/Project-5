@@ -9,7 +9,7 @@ Base = declarative_base()
 
 # Declaring the User global variable
 class User(Base):
-    __tablename__ = 'user'
+    __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
@@ -34,7 +34,7 @@ class Item(Base):
     brand_id = Column(Integer, ForeignKey('brand.id'))
     image = Column(String(250))
     brand = relationship(Brand, cascade="delete")
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('users.id'))
     user = relationship(User, cascade="delete")
     
 
