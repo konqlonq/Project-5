@@ -44,6 +44,12 @@ Digitalocean.com
 GENERAL USAGE NOTES
 ---------------------
 
+URL
+___
+
+http://ec2-52-37-36-221.us-west-2.compute.amazonaws.com
+
+
 Terminal (to shh)
 —————————————————
 ssh -i ~/.ssh/udacity_key.rsa root@52.37.36.221 -p 2200
@@ -183,6 +189,21 @@ Summary of my work
 	- cd /var/www/catalog
 	- sudo nano .htaccess
 	- RedirectMatch 404 /\.git
+
+19) Automatic Package updates
+	- sudo apt-get install unattended-upgrades
+	- sudo dpkg-reconfigure --priority=low unattended-upgrades
+
+20) Prompt password when sudo
+	- sudo visudo
+	- Defaults	env_reset,timestamp_timeout=0
+	- sudo nano /etc/sudoers.d/grader
+	- grader ALL=(ALL) PASSWD: ALL
+
+21) Disable root login
+	- nano /etc/ssh/sshd_config
+	- PermitRootLogin No
+
 
 =======================
 
